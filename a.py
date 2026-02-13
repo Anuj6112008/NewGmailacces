@@ -79,14 +79,6 @@ MAGENTA = '\033[95m'
 BOLD = '\033[1m'
 RESET = '\033[0m'
 
-def install_package(package):
-    try:
-        __import__(package)
-    except ImportError:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-for package in ["h2", "requests", "beautifulsoup4", "httpx", "user_agent"]:
-    install_package(package)
 from user_agent import generate_user_agent
 from random import choice, randrange
 
